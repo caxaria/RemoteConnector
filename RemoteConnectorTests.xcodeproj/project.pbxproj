@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F066E3313FAD77B00CD5F0A /* StorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F066E3213FAD77B00CD5F0A /* StorageHelper.m */; };
+		5F066E3913FADC4C00CD5F0A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F066E3813FADC4C00CD5F0A /* UIImage+Resize.m */; };
 		5F50421B13F437330035D965 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50421A13F437330035D965 /* UIKit.framework */; };
 		5F50421D13F437330035D965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50421C13F437330035D965 /* Foundation.framework */; };
 		5F50421F13F437330035D965 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50421E13F437330035D965 /* CoreGraphics.framework */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F066E3113FAD77B00CD5F0A /* StorageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StorageHelper.h; path = RemoteConnectorTests/Helpers/StorageHelper.h; sourceTree = "<group>"; };
+		5F066E3213FAD77B00CD5F0A /* StorageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StorageHelper.m; path = RemoteConnectorTests/Helpers/StorageHelper.m; sourceTree = "<group>"; };
+		5F066E3713FADC4C00CD5F0A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "RemoteConnectorTests/Helpers/UIImage+Resize.h"; sourceTree = "<group>"; };
+		5F066E3813FADC4C00CD5F0A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "RemoteConnectorTests/Helpers/UIImage+Resize.m"; sourceTree = "<group>"; };
 		5F50421613F437330035D965 /* RemoteConnectorTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteConnectorTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50421A13F437330035D965 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5F50421C13F437330035D965 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,9 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F066E2F13FAD75D00CD5F0A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5F066E3113FAD77B00CD5F0A /* StorageHelper.h */,
+				5F066E3213FAD77B00CD5F0A /* StorageHelper.m */,
+				5F066E3713FADC4C00CD5F0A /* UIImage+Resize.h */,
+				5F066E3813FADC4C00CD5F0A /* UIImage+Resize.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		5F50420B13F437320035D965 = {
 			isa = PBXGroup;
 			children = (
+				5F066E2F13FAD75D00CD5F0A /* Helpers */,
 				5FC98AAE13FA79B3002C1664 /* RemoteConnector */,
 				5F50422013F437330035D965 /* RemoteConnectorTests */,
 				5F50421913F437330035D965 /* Frameworks */,
@@ -187,6 +205,8 @@
 				5F50423113F437330035D965 /* RemoteConnectorTestsViewController.m in Sources */,
 				5FC98AB413FA79E6002C1664 /* DataLoader.m in Sources */,
 				5FC98AB513FA79E6002C1664 /* RemoteConnector.m in Sources */,
+				5F066E3313FAD77B00CD5F0A /* StorageHelper.m in Sources */,
+				5F066E3913FADC4C00CD5F0A /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,4 +18,8 @@
 -(IBAction) testGET:(id)sender;
 -(IBAction) testPOST:(id)sender;
 
+
+-(IBAction) testImageDownload:(id)sender;
+-(IBAction) testImageResize:(id)sender;
+
 @end

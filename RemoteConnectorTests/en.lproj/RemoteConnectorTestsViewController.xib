@@ -63,13 +63,25 @@
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="619164814"/>
 							</object>
+							<object class="IBUIBarButtonItem" id="464502560">
+								<string key="IBUITitle">Test POST</string>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="619164814"/>
+							</object>
 							<object class="IBUIBarButtonItem" id="935568652">
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<reference key="IBUIToolbar" ref="619164814"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="464502560">
-								<string key="IBUITitle">Test POST</string>
+							<object class="IBUIBarButtonItem" id="514848385">
+								<string key="IBUITitle">Image Download</string>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="619164814"/>
+							</object>
+							<object class="IBUIBarButtonItem" id="996257409">
+								<string key="IBUITitle">Image Download &amp; Resize</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="619164814"/>
@@ -145,6 +157,22 @@
 					</object>
 					<int key="connectionID">12</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">testImageDownload:</string>
+						<reference key="source" ref="514848385"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">18</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">testImageResize:</string>
+						<reference key="source" ref="996257409"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">19</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -187,6 +215,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="703932311"/>
+							<reference ref="996257409"/>
+							<reference ref="514848385"/>
 							<reference ref="935568652"/>
 							<reference ref="464502560"/>
 						</object>
@@ -198,13 +228,23 @@
 						<reference key="parent" ref="619164814"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">8</int>
+						<int key="objectID">9</int>
+						<reference key="object" ref="464502560"/>
+						<reference key="parent" ref="619164814"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
 						<reference key="object" ref="935568652"/>
 						<reference key="parent" ref="619164814"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">9</int>
-						<reference key="object" ref="464502560"/>
+						<int key="objectID">15</int>
+						<reference key="object" ref="996257409"/>
+						<reference key="parent" ref="619164814"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">17</int>
+						<reference key="object" ref="514848385"/>
 						<reference key="parent" ref="619164814"/>
 					</object>
 				</object>
@@ -217,11 +257,13 @@
 					<string>-1.IBPluginDependency</string>
 					<string>-2.CustomClassName</string>
 					<string>-2.IBPluginDependency</string>
+					<string>14.IBPluginDependency</string>
+					<string>15.IBPluginDependency</string>
+					<string>17.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
-					<string>8.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -229,6 +271,8 @@
 					<string>RemoteConnectorTestsViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -250,7 +294,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">12</int>
+			<int key="maxID">19</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -263,10 +307,14 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>testGET:</string>
+							<string>testImageDownload:</string>
+							<string>testImageResize:</string>
 							<string>testPOST:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -276,12 +324,22 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>testGET:</string>
+							<string>testImageDownload:</string>
+							<string>testImageResize:</string>
 							<string>testPOST:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">testGET:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">testImageDownload:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">testImageResize:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

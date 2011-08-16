@@ -8,6 +8,7 @@
 
 #import "RemoteConnectorTestsViewController.h"
 #import "RemoteConnector.h"
+#import "UIImage+Resize.h"
 
 @implementation RemoteConnectorTestsViewController
 
@@ -67,6 +68,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotResult:) name:requestNotificationKey object:nil];
 }
 
+-(IBAction) testImageDownload:(id)sender
+{
+    //Start GET Request and get notification key
+    NSString* requestNotificationKey = [remoteConnector getRequest:@"http://0.gravatar.com/avatar/40405d52c92e546d32046560f4e5c40a?size=420"];
+    
+    //Register in notification center with the notification key
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showImage:) name:requestNotificationKey object:nil];
+}
+
+-(IBAction) testImageResize:(id)sender
+{
+    //Start GET Request and get notification key
+    NSString* requestNotificationKey = [remoteConnector getRequest:@"http://0.gravatar.com/avatar/40405d52c92e546d32046560f4e5c40a?size=420"];
+    
+    //Register in notification center with the notification key
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resizeAndShowImage:) name:requestNotificationKey object:nil];
+}
+
 #pragma mark events
 
 -(void) gotResult:(NSNotification*) notification
@@ -84,6 +103,48 @@
     NSData* data = [getResult objectForKey:@"data"];
     
     [webView loadData:data MIMEType:nil textEncodingName:nil baseURL:nil];
+}
+
+-(void) showImage:(NSNotification*) notification
+{
+    //Get result
+    NSDictionary* getResult = (NSDictionary*)[notification object];
+    
+    //Get request key
+    NSString* requestNotificationKey = [getResult objectForKey:@"key"];
+    
+    //Unregister for notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:requestNotificationKey object:nil];
+	
+    //Get request data
+    NSData* data = [getResult objectForKey:@"data"];
+    
+    [webView loadData:data MIMEType:@"image/png" textEncodingName:nil baseURL:nil];
+    
+}
+
+
+-(void) resizeAndShowImage:(NSNotification*) notification
+{
+    //Get result
+    NSDictionary* getResult = (NSDictionary*)[notification object];
+    
+    //Get request key
+    NSString* requestNotificationKey = [getResult objectForKey:@"key"];
+    
+    //Unregister for notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:requestNotificationKey object:nil];
+	
+    //Get request data
+    NSData* data = [getResult objectForKey:@"data"];
+    
+    UIImage* originalImage = [UIImage imageWithData:data];
+    UIImage* scaledImage = [originalImage scaleToSize:CGSizeMake(100, 100)];
+    
+    NSData* scaledData = UIImagePNGRepresentation(scaledImage);
+    
+    [webView loadData:scaledData MIMEType:@"image/png" textEncodingName:nil baseURL:nil];
+    
 }
 
 
