@@ -48,7 +48,7 @@
 -(IBAction) testGET:(id)sender
 {
     //Start GET Request and get notification key
-    NSString* requestNotificationKey = [remoteConnector getRawRequest:@"http://caxaria.wordpress.com"];
+    NSString* requestNotificationKey = [remoteConnector getRequest:@"http://caxaria.wordpress.com"];
     
     //Register in notification center with the notification key
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotResult:) name:requestNotificationKey object:nil];
@@ -57,11 +57,11 @@
 
 -(IBAction) testPOST:(id)sender
 {
-    //Create post request variables.
+    //Create post request variables. This request will be ?s=objc&
     NSDictionary* variables = [NSDictionary dictionaryWithObjectsAndKeys:@"objc", @"s", nil];
     
     //Start POST Request and get notification key
-    NSString* requestNotificationKey = [remoteConnector postRawRequest:@"http://caxaria.wordpress.com" variables:variables];
+    NSString* requestNotificationKey = [remoteConnector postRequest:@"http://caxaria.wordpress.com" variables:variables];
     
     //Register in notification center with the notification key
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotResult:) name:requestNotificationKey object:nil];
